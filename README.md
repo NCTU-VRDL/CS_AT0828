@@ -21,7 +21,7 @@ Please contact us by the following infomation:
 |   1  |  02/16  | University Anniversary Celebrations: No lecture                      |                                                            |
 |   2  |  02/23  | Introduction to Pattern Recognition                                  |                                                            |
 |   3  |  03/02  | Linear Model for Regression                                          |                                                            |
-|   4  |  03/09  | Linear Model for Classification I Neural Networks                    | **HW1 announce**                                           |                
+|   4  |  03/09  | Linear Model for Classification I                                    | **HW1 announce**                                           |                
 |   5  |  03/16  | Linear Model for Classification II                                   |                                                            |
 |   6  |  03/23  | Neural Networks Kernel Method I                                      | **HW1 due, HW2 announce**                                  |
 |   7  |  03/30  | Dimensionality Reduction Kernel Method II                            |                                                            |
