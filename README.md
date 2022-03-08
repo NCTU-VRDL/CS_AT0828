@@ -23,8 +23,8 @@ Please contact us by the following infomation:
 |   3  |  03/02  | Linear Model for Regression                                          |                                                            |
 |   4  |  03/09  | Linear Model for Classification I                                    | **HW1 announce**                                           |                
 |   5  |  03/16  | Linear Model for Classification II                                   |                                                            |
-|   6  |  03/23  | Neural Networks Kernel Method I                                      | **HW1 due, HW2 announce**                                  |
-|   7  |  03/30  | Dimensionality Reduction Kernel Method II                            |                                                            |
+|   6  |  03/23  | Neural Networks                                                      | **HW1 due, HW2 announce**                                  |
+|   7  |  03/30  | Dimensionality Reduction                                             |                                                            |
 |   8  |  04/06  | Holiday/Cross-university Activities: No lecture                      | **HW2 due**                                                 |
 |   9  |  04/13  | Ensemble Method I                                                    |                                                            |    
 |   10 |  04/20  | Ensemble Method II                                                   | **HW3 announce**                                           |                  
