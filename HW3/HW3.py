@@ -7,10 +7,11 @@
 # Please note that only **NUMPY** can be used to implement your model, you will get no points by simply calling sklearn.tree.DecisionTreeClassifier
 
 # ## Load data
-# The dataset is the Heart Disease Data Set from UCI Machine Learning Repository. See follow links for more information
+# The dataset is the Heart Disease Data Set from UCI Machine Learning Repository. It is a binary classifiation dataset, the label is stored in `target` column. **Please note that there exist categorical features which need to be [one-hot encoding](https://www.datacamp.com/community/tutorials/categorical-data) before fit into your model!**
+# See follow links for more information
 # https://archive.ics.uci.edu/ml/datasets/heart+Disease
 
-# In[342]:
+# In[2]:
 
 
 import pandas as pd
@@ -25,8 +26,14 @@ train_df = df.iloc[train_idx]
 test_df = df.iloc[test_idx]
 
 
+# In[3]:
+
+
+train_df.head()
+
+
 # ## Question 1
-# Gini Index or Entropy is often used for measuring the “best” splitting of the data. Please compute the Entropy and Gini Index of provided data. Please use the formula from [page 7 of hw3 slides](https://docs.google.com/presentation/d/1ish3jEr_6be0FK4kgOZa12nYAyJFh0P2LCNsNPOCiXo/edit#slide=id.g7703d1636d_0_21)
+# Gini Index or Entropy is often used for measuring the “best” splitting of the data. Please compute the Entropy and Gini Index of provided data. Please use the formula from [page 5 of hw3 slides](https://docs.google.com/presentation/d/1kIe_-YZdemRMmr_3xDy-l0OS2EcLgDH7Uan14tlU5KE/edit#slide=id.gd542a5ff75_0_15)
 
 # In[5]:
 
@@ -60,8 +67,8 @@ print("Entropy of data is ", entropy(data))
 
 # ## Question 2
 # Implement the Decision Tree algorithm (CART, Classification and Regression Trees) and trained the model by the given arguments, and print the accuracy score on the test data. You should implement two arguments for the Decision Tree algorithm
-# 1. **Criterion**: The function to measure the quality of a split. Your model should support “gini” for the Gini impurity and “entropy” for the information gain. 
-# 2. **Max_depth**: The maximum depth of the tree. If Max_depth=None, then nodes are expanded until all leaves are pure. Max_depth=1 equals to split data once
+# 1. **criterion**: The function to measure the quality of a split. Your model should support `gini` for the Gini impurity and `entropy` for the information gain. 
+# 2. **max_depth**: The maximum depth of the tree. If `max_depth=None`, then nodes are expanded until all leaves are pure. `max_depth=1` equals to split data once
 # 
 
 # In[7]:
@@ -73,7 +80,7 @@ class DecisionTree():
 
 
 # ### Question 2.1
-# Using Criterion=‘gini’, showing the accuracy score of test data by Max_depth=3 and Max_depth=10, respectively.
+# Using `criterion=gini`, showing the accuracy score of test data by `max_depth=3` and `max_depth=10`, respectively.
 # 
 
 # In[8]:
@@ -84,7 +91,7 @@ clf_depth10 = DecisionTree(criterion='gini', max_depth=10)
 
 
 # ### Question 2.2
-# Using Max_depth=3, showing the accuracy score of test data by Criterion=‘gini’ and Criterion=’entropy’, respectively.
+# Using `max_depth=3`, showing the accuracy score of test data by `criterion=gini` and `criterion=entropy`, respectively.
 # 
 
 # In[9]:
@@ -108,7 +115,7 @@ clf_entropy = DecisionTree(criterion='entropy', max_depth=3)
 
 # ## Question 4
 # implement the AdaBooest algorithm by using the CART you just implemented from question 2 as base learner. You should implement one arguments for the AdaBooest.
-# 1. **N_estimators**: The maximum number of estimators at which boosting is terminated
+# 1. **n_estimators**: The maximum number of estimators at which boosting is terminated
 
 # In[343]:
 
@@ -125,7 +132,7 @@ class AdaBoost():
 
 
 # ### Question 4.1
-# Show the accuracy score of test data by n_estimators=10 and n_estimators=100, respectively.
+# Show the accuracy score of test data by `n_estimators=10` and `n_estimators=100`, respectively.
 # 
 
 # In[ ]:
@@ -137,9 +144,9 @@ class AdaBoost():
 # ## Question 5
 # implement the Random Forest algorithm by using the CART you just implemented from question 2. You should implement three arguments for the Random Forest.
 # 
-# 1. **N_estimators**: The number of trees in the forest. 
-# 2. **Max_features**: The number of random select features to consider when looking for the best split
-# 3. **Bootstrap**: Whether bootstrap samples are used when building tree
+# 1. **n_estimators**: The number of trees in the forest. 
+# 2. **max_features**: The number of random select features to consider when looking for the best split
+# 3. **bootstrap**: Whether bootstrap samples are used when building tree
 # 
 
 # In[11]:
@@ -151,7 +158,7 @@ class RandomForest():
 
 
 # ### Question 5.1
-# Using Criterion=‘gini’, Max_depth=None, Max_features=sqrt(n_features), showing the accuracy score of test data by n_estimators=10 and n_estimators=100, respectively.
+# Using `criterion=gini`, `max_depth=None`, `max_features=sqrt(n_features)`, showing the accuracy score of test data by `n_estimators=10` and `n_estimators=100`, respectively.
 # 
 
 # In[12]:
@@ -168,7 +175,7 @@ clf_100tree = RandomForest(n_estimators=100, max_features=np.sqrt(x_train.shape[
 
 
 # ### Question 5.2
-# Using Criterion=‘gini’, Max_depth=None, N_estimators=10, showing the accuracy score of test data by Max_features=sqrt(n_features) and Max_features=n_features, respectively.
+# Using `criterion=gini`, `max_depth=None`, `n_estimators=10`, showing the accuracy score of test data by `max_features=sqrt(n_features)` and `max_features=n_features`, respectively.
 # 
 
 # In[13]:
@@ -195,7 +202,25 @@ clf_all_features = RandomForest(n_estimators=10, max_features=x_train.shape[1])
 # In[ ]:
 
 
+from sklearn.metrics import accuracy_score
 
+
+# In[4]:
+
+
+y_test = test_df['target']
+
+
+# In[ ]:
+
+
+y_pred = your_model.predict(x_test)
+
+
+# In[ ]:
+
+
+print('Test-set accuarcy score: ', accuracy_score(y_test, y_pred))
 
 
 # ## Supplementary
