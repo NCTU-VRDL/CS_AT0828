@@ -101,7 +101,7 @@ clf_gini = DecisionTree(criterion='gini', max_depth=3)
 clf_entropy = DecisionTree(criterion='entropy', max_depth=3)
 
 
-# - Note: All of your accuracy scores should over **0.7**
+# - Note: Your decisition tree scores should over **0.75**. It may suffer from overfitting, if so, you can tune the hyperparameter such as `max_depth`
 # - Note: You should get the same results when re-building the model with the same arguments,  no need to prune the trees
 # - Hint: You can use the recursive method to build the nodes
 # 
