@@ -58,24 +58,8 @@ print(best_parameters)
 # You reults should be look like the reference image ![image](https://miro.medium.com/max/1296/1*wGWTup9r4cVytB5MOnsjdQ.png) 
 
 # ## Question 4
-# Train your SVM model by the best parameters you found from question 2 on the whole training set and evaluate the performance on the test set. **You accuracy should over 0.85**
+# Train your SVM model by the best parameters you found from question 2 on the whole training set and evaluate the performance on the test set.
 
 y_pred = best_model.predict(x_test)
 print("Accuracy score: ", accuracy_score(y_pred, y_test))
-
-
-# ## Question 5
-# Compare the performance of each model you have implemented from HW1
-
-# ### HW1
-train_df = pd.read_csv("../HW1/train_data.csv")
-x_train = train_df['x_train'].to_numpy().reshape(-1,1)
-y_train = train_df['y_train'].to_numpy().reshape(-1,1)
-
-test_df = pd.read_csv("../HW1/test_data.csv")
-x_test = test_df['x_test'].to_numpy().reshape(-1,1)
-y_test = test_df['y_test'].to_numpy().reshape(-1,1)
-
-print("Square error of Linear regression: ")
-print("Square error of SVM regresssion model: ")
 
