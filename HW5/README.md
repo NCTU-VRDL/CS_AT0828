@@ -1,4 +1,4 @@
-## HW5: Deep neural network, due date: June 8, 23:59
+## HW5: Deep neural network, due date: June 12, 23:59
 
 ### Goals
 
